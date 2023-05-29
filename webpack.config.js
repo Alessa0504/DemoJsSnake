@@ -29,7 +29,7 @@ module.exports = {
         //告诉webpack不使用箭头函数
         environment: {
             arrowFunction: false,
-            const: false //兼容ie10
+            const: false //不使用const, 兼容ie10
         }
 
     },

@@ -30,10 +30,26 @@ class Snake {
      * @constructor
      */
     set X(value) {
+        if (this.X === value) {   //过滤重复，新旧值一样则不修改
+            return
+        }
+        //X值的合法范围(0~290)
+        if (value < 0 || value > 290) {   //说明蛇撞墙了
+            throw new Error('蛇撞墙了！')   //直接抛出一个错误
+        }
+
         this.head.style.left = value + 'px'
     }
 
     set Y(value) {
+        if (this.Y === value) {
+            return
+        }
+        //Y值的合法范围(0~290)
+        if (value < 0 || value > 290) {   //说明蛇撞墙了
+            throw new Error('蛇撞墙了！')   //直接抛出一个错误
+        }
+
         this.head.style.top = value + 'px'
     }
 
